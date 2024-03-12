@@ -5,8 +5,8 @@ export const drawBlocks = ({
   blocksRef,
   ctx,
 } : {
-  blocksRef: React.MutableRefObject<Block[][]>;
-  ctx: CanvasRenderingContext2D | null | undefined
+  blocksRef: React.MutableRefObject<Block[][] | null>;
+  ctx: CanvasRenderingContext2D;
 }) => {
   if (!ctx ) return;
 
