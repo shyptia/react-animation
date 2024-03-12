@@ -8,3 +8,8 @@ export type Block = {
   y: number,
   color: Colors,
 };
+
+export interface AnimatedBlock extends Block {
+  dx: number;
+  dy: number;
+}

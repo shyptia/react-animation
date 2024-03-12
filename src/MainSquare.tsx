@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { BLOCK_SIZE, CANVAS_SIZE, squares } from "./constants";
 import { Block } from "./types";
-import { createBlocks } from "./utils";
+import { checkCollision, createBlocks } from "./utils";
 import { drawBlocks } from "./utils/drawBlocks";
 
 export function MainSquare() {
@@ -31,6 +31,8 @@ export function MainSquare() {
         if (square.y <= 1 || square.y > CANVAS_SIZE - BLOCK_SIZE) {
           square.dy *= -1;
         }
+
+        checkCollision({square, blocksRef});
 
         ctx?.beginPath();
         ctx.fillStyle = square.color;
