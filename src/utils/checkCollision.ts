@@ -18,6 +18,7 @@ export function checkCollision ({
 
     if (blocksRef.current[blockRowIndex][blockColIndex].color === Colors.Purple) {
       square.dx *= -1;
+      blocksRef.current[blockRowIndex][blockColIndex].color = Colors.Yellow;
     }
   }
 
@@ -29,6 +30,7 @@ export function checkCollision ({
 
     if (blocksRef.current[blockRowIndex][blockColIndex].color === Colors.Yellow) {
       square.dx *= -1;
+      blocksRef.current[blockRowIndex][blockColIndex].color = Colors.Purple;
     }
   }
 }
